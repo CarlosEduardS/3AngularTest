@@ -1,7 +1,8 @@
 <h2>Melhores Herois</h2>
+<hr>
 <div class="heroes-menu">
     @for (hero of Hero; track hero.id) {
-        <a href="information/{{hero.id}}/clf">{{hero.name}} </a>
+        <a href="information/{{hero.id}}/clf">{{hero.name}} - {{hero.strengh}} </a>
     }
 </div>
 
