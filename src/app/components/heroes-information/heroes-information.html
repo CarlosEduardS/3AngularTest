@@ -1,0 +1,15 @@
+@if (hero) {
+    <div class="UiSelected">
+        <h2>Informações de {{hero.name | titlecase}}:</h2>
+        <div>
+            <h3><span>id: </span>{{hero.id}}, <span>Força de: </span>{{hero.strengh}}</h3>
+            <h3>{{hero.info}}</h3>
+        </div>
+        <p>descrição: {{left}}</p>
+        @if (left == 'selector') {
+            <a href="selector">Voltar? </a>
+        } @else if (left == 'clf') {
+            <a href="classification">Voltar? </a>
+        }
+    </div>
+}

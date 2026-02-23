@@ -1,0 +1,8 @@
+<h2>Melhores Herois</h2>
+<div class="heroes-menu">
+    @for (hero of Hero; track hero.id) {
+        <a href="information/{{hero.id}}/clf">{{hero.name}} </a>
+    }
+</div>
+
+<a href="home" style="text-align: center;">Voltar?</a>
