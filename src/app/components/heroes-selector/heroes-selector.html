@@ -1,0 +1,13 @@
+<h2 style="text-align: center;">Selecione um dos Herois a seguir:</h2>
+
+<ul style="list-style-type: none;">
+    @for (hero of HeroesSelectorNew; track hero.id) {
+        <li>
+            <a href="information/{{hero.id}}/selector" class="SliderBtn">
+                <span class="badge">{{hero.id}}</span><b>{{hero.name}}</b>
+            </a>
+        </li>
+    }
+</ul>
+
+<a href="home" style="text-align: center;">Voltar?</a>
