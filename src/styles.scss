@@ -8,7 +8,6 @@ div {
 }
 
 a {
-    margin-left: 10px;
     color: rgb(31, 31, 31);
     padding: 1rem;
     background-color: rgba(185, 185, 185, 0.589);
@@ -16,11 +15,47 @@ a {
     border: 3px solid #00000017;
     text-decoration: none;
     display: inline-block;
+    margin-left: 61.5dvh;
     transition: all 0.4s ease-in-out;
+    margin-bottom: 20px;
 }
 
 a:hover {
     background-color: rgba(29, 29, 29, 0.589);
     color: azure;
     box-shadow: 6px 7px 3px #333
+}
+
+input {
+    border-radius: 15px;
+    border: 1px solid #0000002d;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+button {
+    border-radius: 15px;
+    border: 1px solid #0000002d;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 59.2dvh;
+}
+
+input:hover {
+    background-color: #b1b3b2;
+}
+
+button:hover {
+    background-color: #afafaf;
+    padding: 15px;
+    width: 15em;
+    border-radius: 20px;
+    margin-left: 55.5dvh;
 }

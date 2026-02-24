@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeroesBase } from '../../heroes-base';
 import { HeroesService } from '../../services/heroes-service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-heroes-classification',
@@ -9,22 +10,15 @@ import { HeroesService } from '../../services/heroes-service';
   styleUrl: './heroes-classification.scss',
 })
 export class HeroesClassification {
-  Hero: HeroesBase[] = []
+  heroes: HeroesBase[] = [];
 
-  constructor(private heroesservices: HeroesService) {}
+  constructor(private heroesServices: HeroesService) {}
 
   ngOnInit(): void {
-    this.getHeroes();
-    this.orgHeroes();
-  }
-
-  getHeroes(): void {
-    this.heroesservices.getHeroes()
-      .subscribe(HeroesSelected => this.Hero = HeroesSelected);
-  }
-  
-  orgHeroes() {
-    this.Hero.sort((a, b) => b.strengh - a.strengh);
-    this.Hero = this.Hero.slice(0, 5);
+    this.heroesServices.getHeroes().subscribe(lista => {
+      this.heroes = [...lista]
+        .sort((a, b) => b.strengh - a.strengh)
+        .slice(0, 5);
+    });
   }
 }
