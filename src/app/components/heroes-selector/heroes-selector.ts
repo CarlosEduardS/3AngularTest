@@ -9,16 +9,13 @@ import { HeroesService } from '../../services/heroes-service';
   styleUrl: './heroes-selector.scss',
 })
 export class HeroesSelector {
-  HeroesSelectorNew: HeroesBase[] = []
+  HeroesSelectorNew: HeroesBase[] = [];
 
   constructor(private heroservice: HeroesService) {}
 
   ngOnInit(): void {
-    this.getHeroes();
-  }
-
-  getHeroes(): void {
-    this.heroservice.getHeroes()
-      .subscribe(HeroesSelector => this.HeroesSelectorNew = HeroesSelector)
+    this.heroservice.getHeroes().subscribe(lista => {
+      this.HeroesSelectorNew = [...lista];
+    });
   }
 }
