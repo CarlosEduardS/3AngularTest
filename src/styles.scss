@@ -13,11 +13,12 @@ a {
     background-color: rgba(185, 185, 185, 0.589);
     border-radius: 20px;
     border: 3px solid #00000017;
+    backdrop-filter: blur(3px);
     text-decoration: none;
-    display: inline-block;
-    margin-left: 61.5dvh;
     transition: all 0.4s ease-in-out;
-    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 a:hover {
@@ -25,7 +26,6 @@ a:hover {
     color: azure;
     box-shadow: 6px 7px 3px #333;
     padding: 1.3rem;
-    margin-left: 64dvh;
 }
 
 input {
@@ -39,15 +39,10 @@ input {
 button {
     border-radius: 15px;
     border: 1px solid #0000002d;
-    text-align: center;
     padding: 10px;
     transition: all 0.3s ease-in-out;
     width: 11em;
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 59.2dvh;
 }
 
 input:hover {
@@ -59,10 +54,9 @@ button:hover {
     padding: 15px;
     width: 15em;
     border-radius: 20px;
-    margin-left: 55.5dvh;
 }
 
-a:focus, button:focus, input:focus {
+a:focus, button:focus {
     animation: focusA 1s ease-in-out infinite;
 }
 
