@@ -1,24 +1,18 @@
 import { Component } from '@angular/core';
 import { HeroesBase } from '../../heroes-base';
 import { HeroesService } from '../../services/heroes-service';
-import { BehaviorSubject } from 'rxjs';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-heroes-classification',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './heroes-classification.html',
   styleUrl: './heroes-classification.scss',
 })
 export class HeroesClassification {
-  heroes: HeroesBase[] = [];
+  readonly topHeroes;
 
-  constructor(private heroesServices: HeroesService) {}
-
-  ngOnInit(): void {
-    this.heroesServices.getHeroes().subscribe(lista => {
-      this.heroes = [...lista]
-        .sort((a, b) => b.strengh - a.strengh)
-        .slice(0, 5);
-    });
+  constructor(private heroesServices: HeroesService) {
+    this.topHeroes  = this.heroesServices.getTopHeroes();
   }
 }

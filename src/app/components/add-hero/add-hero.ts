@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HeroesService } from '../../services/heroes-service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-add-hero',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './add-hero.html',
   styleUrl: './add-hero.scss',
 })
@@ -18,7 +19,7 @@ export class AddHero {
 
   constructor(private heroesServices: HeroesService) {}
 
-  VerName() {
+  ViewName() {
     if (this.NewName == '' || this.NewName == ' ') {
       this.IsName = false;
     } else {

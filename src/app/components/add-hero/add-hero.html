@@ -7,9 +7,9 @@
 </div>
 
 @if (IsName == false) {
-    <p><strong>Digite um nome...</strong></p>
+    <p><strong>Digite um nome ou uma força valida...</strong></p>
 }
 
-<button (click)="VerName()">Adicionar Heroi?</button>
+<button (click)="ViewName()">Adicionar Heroi?</button>
 
-<a href="home" style="text-align: center;">Voltar?</a>
+<a routerLink="/home" style="text-align: center;">Voltar?</a>
