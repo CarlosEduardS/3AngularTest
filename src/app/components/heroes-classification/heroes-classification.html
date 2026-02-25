@@ -1,9 +1,9 @@
 <h2>Melhores Herois</h2>
 <hr>
 <div class="heroes-menu">
-    @for (hero of heroes; track hero.id) {
-        <a href="information/{{hero.id}}/clf">{{hero.name}} - {{hero.strengh}} </a>
+    @for (hero of topHeroes(); track hero.id) {
+        <a [routerLink]="['/information', hero.id, 'cls']">{{hero.name}} - {{hero.strengh}} </a>
     }
 </div>
 
-<a href="home" style="text-align: center;">Voltar?</a>
+<a routerLink="/home" style="text-align: center;">Voltar?</a>

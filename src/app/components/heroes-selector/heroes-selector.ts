@@ -1,21 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { HeroesBase } from '../../heroes-base';
 import { HeroesService } from '../../services/heroes-service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-heroes-selector',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './heroes-selector.html',
   styleUrl: './heroes-selector.scss',
 })
 export class HeroesSelector {
-  HeroesSelectorNew: HeroesBase[] = [];
+  readonly Heroes;
 
-  constructor(private heroservice: HeroesService) {}
-
-  ngOnInit(): void {
-    this.heroservice.getHeroes().subscribe(lista => {
-      this.HeroesSelectorNew = [...lista];
-    });
+  constructor(private heroesServices: HeroesService) {
+    this.Heroes = this.heroesServices.getHeroes();
   }
+
 }

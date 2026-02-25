@@ -6,10 +6,10 @@ import { HeroesInformation } from './components/heroes-information/heroes-inform
 import { AddHero } from './components/add-hero/add-hero';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: Home},
     {path: 'classification', component: HeroesClassification},
     {path: 'selector', component: HeroesSelector},
     {path: 'add-hero', component: AddHero},
     {path: 'information/:id/:origem', component: HeroesInformation},
+    {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];

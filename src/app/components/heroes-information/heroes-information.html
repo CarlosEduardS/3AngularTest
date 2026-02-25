@@ -1,15 +1,17 @@
-@if (hero) {
+@if (heroSignal()) {
     <div class="UiSelected">
-        <h2>Informações de {{hero.name | titlecase}}:</h2>
+        <h2>Informações de {{heroSignal().name | titlecase}}:</h2>
         <div>
-            <h3><span>id: </span>{{hero.id}}, <span>Força de: </span>{{hero.strengh}}</h3>
-            <h3>{{hero.info}}</h3>
+            <h3><span>id: </span>{{heroSignal().id}}, <span>Força de: </span>{{heroSignal().strengh}}</h3>
+            <h3>{{heroSignal().info}}</h3>
         </div>
         <p>descrição: {{left}}</p>
         @if (left == 'selector') {
-            <a href="selector">Voltar? </a>
-        } @else if (left == 'clf') {
-            <a href="classification">Voltar? </a>
+            <a routerLink="/selector">Voltar? </a>
+        } @else if (left == 'cls') {
+            <a routerLink="/classification">Voltar? </a>
         }
     </div>
+} @else {
+    <p>Carregando Informações...</p>
 }
