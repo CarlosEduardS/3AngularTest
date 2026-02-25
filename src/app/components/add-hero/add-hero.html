@@ -4,12 +4,10 @@
     <h3>Nome: <input placeholder="Digite o nome:" [(ngModel)]="NewName" type="text" required="true"></h3>
     <h3>Info: <input placeholder="Digite as informações:" [(ngModel)]="NewInfo" type="text"></h3>
     <h3>Força: <input placeholder="Digite a força:" [(ngModel)]="NewStrengh" type="number" min="1" max="999"></h3>
+    <button (click)="ViewName()">Adicionar Heroi?</button>
+    <p><a routerLink="/home" style="text-align: center;">Voltar?</a></p>
 </div>
 
 @if (IsName == false) {
     <p><strong>Digite um nome ou uma força valida...</strong></p>
 }
-
-<button (click)="ViewName()">Adicionar Heroi?</button>
-
-<a routerLink="/home" style="text-align: center;">Voltar?</a>
